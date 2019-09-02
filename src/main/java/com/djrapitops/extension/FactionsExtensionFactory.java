@@ -31,11 +31,11 @@ import java.util.Optional;
  *
  * @author Rsl1122
  */
-public class NewExtensionFactory {
+public class FactionsExtensionFactory {
 
     private boolean isAvailable() {
         try {
-            Class.forName("");
+            Class.forName("com.massivecraft.factions.entity.MPlayer");
             return true;
         } catch (ClassNotFoundException e) {
             return false;
@@ -44,7 +44,7 @@ public class NewExtensionFactory {
 
     public Optional<DataExtension> createExtension() {
         if (isAvailable()) {
-            return Optional.of(new NewExtension());
+            return Optional.of(new FactionsExtension());
         }
         return Optional.empty();
     }
